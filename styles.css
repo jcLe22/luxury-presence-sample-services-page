@@ -1,0 +1,34 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700&display=swap');
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+   --beige-color: #F0E5CF;
+   --lt-grey-color: #F7F6F2;
+   --dk-grey-color: #C8C6C6;
+   --navy-color: #4B6587;
+}
+
+body {
+    font-family: 'Afacad', sans-serif;
+}
+
+/* ----- */
+/* Utility Classes */
+/* ----- */
+
+.flex {
+    display: flex;
+    
+}
