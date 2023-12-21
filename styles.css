@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 @media (prefers-reduced-motion: no-preference) {
     * {
@@ -16,7 +16,7 @@
 :root {
    --beige-color: #F0E5CF;
    --lt-grey-color: #F7F6F2;
-   --dk-grey-color: #C8C6C6;
+   --dk-grey-color: #999999;
    --navy-color: #4B6587;
 }
 
@@ -41,18 +41,49 @@ body {
     overflow: hidden;
 }
 
+header {
+    height: 100vh;
+    background-color: var(--beige-color);
+    background: url('https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQxNDUyfQ&w=1920');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-title {
+    height: calc(100vh - 77.47px);
+    justify-content: center;
+    align-items: center;
+
+    color: var(--lt-grey-color);
+    font-size: 2rem;
+    font-family: 'Old Standard TT', serif;
+    
+    text-transform: uppercase;
+}
+
+h1 {
+    background-color: var(--navy-color);
+    padding: 2rem;
+}
+
+/* ----- */
+/* NAVBAR */
+/* ----- */
+
 #navbar-section {
     align-items: center;
     justify-content: space-between;
 
     text-transform: uppercase;
-    padding: 2rem;
+    font-weight: 700;
+    padding: 1.5rem;
 
     background-color: var(--dk-grey-color);
 }
 
 .company-logo {
-    width: 15rem;
+    width: 10rem;
 }
 
 .mobile-nav-toggle {
@@ -63,7 +94,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
@@ -79,21 +110,28 @@ body {
     height: 2px;
     background-color: var(--lt-grey-color);
     bottom: -10px;
-    transition: 500ms;
+    transition: 350ms;
 }
 .nav-link:hover::after {
     width: 100%;
 }
 
+
+
 /* mobile view */
 @media (max-width: 1024px) {
+    .page-title {
+        font-size: 1rem;
+    }
+    
     #nav-list {
         flex-direction: column;
         position: fixed;
         inset: 0 0 0 30%;
 
         padding: min(30vh, 5rem) 2em;
-        background-color: var(--navy-color);
+        background: hsla(214, 29%, 41%, 0.785);
+        backdrop-filter: blur(0.5rem);
 
         transform: translateX(100%);
         transition: transform 350ms ease-out;
@@ -115,7 +153,6 @@ body {
         border: 0;
         width: 2rem;
         aspect-ratio: 1;
-        top: 2rem;
         right: 2rem;
     }
 
@@ -128,5 +165,11 @@ body {
 @media (min-width: 426px) and (max-width: 1024px) {
     #nav-list {
         inset: 0 0 0 70%;
+    }
+}
+
+@media (max-width: 426px) {
+    h1 {
+        padding: 1rem;
     }
 }
