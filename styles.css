@@ -32,6 +32,15 @@ body {
     display: flex;
 }
 
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
+
 #navbar-section {
     align-items: center;
     justify-content: space-between;
@@ -42,6 +51,14 @@ body {
     background-color: var(--dk-grey-color);
 }
 
+.company-logo {
+    width: 15rem;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
 #nav-list {
     list-style: none;
     padding: 0;
@@ -49,9 +66,23 @@ body {
     gap: 1rem;
 }
 
-#nav-list a {
+.nav-link {
+    position: relative;
     text-decoration: none;
     color: var(--lt-grey-color);
+}
+.nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--lt-grey-color);
+    bottom: -10px;
+    transition: 500ms;
+}
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* mobile view */
@@ -63,5 +94,39 @@ body {
 
         padding: min(30vh, 5rem) 2em;
         background-color: var(--navy-color);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    #nav-list[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background-color: transparent;
+        background-image: url('./assets/burger-menu-svgrepo-com.svg');
+        background-size: 2rem;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url('./assets/close-svgrepo-com.svg');
+        background-size: 2rem;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 1024px) {
+    #nav-list {
+        inset: 0 0 0 70%;
     }
 }
