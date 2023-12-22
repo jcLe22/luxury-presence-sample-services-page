@@ -84,6 +84,7 @@ h1 {
 /* ----- */
 
 #navbar-section {
+    position: fixed;
     align-items: center;
     justify-content: space-between;
 
@@ -92,6 +93,8 @@ h1 {
     padding: 1.5rem;
 
     background-color: var(--blk-color);
+
+    width: 100%;
 }
 
 .company-logo {
@@ -342,7 +345,7 @@ h1 {
 /* ----- */
 
 #work-with-us {
-    height: 100vh;
+    padding-bottom: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -429,10 +432,14 @@ form p {
     padding: 2rem;
 }
 
+footer a {
+    color: black;
+}
+
 button {
     background-color: var(--blk-color);
     color: var(--lt-grey-color);
-    margin: 1rem;
+    margin: 1rem 0 1rem 0;
     padding: 1rem;
     border: none;
     border-radius: 5px;
@@ -442,6 +449,54 @@ button {
 
 button:hover {
     background-color: var(--navy-color);
+}
+
+/* ----- */
+/* FOOTER */
+/* ----- */
+
+footer {
+    padding: 0 5rem 5rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+footer h3 {
+    font-size: 2rem;
+}
+
+footer h4 {
+    font-size: 1.2rem;
+}
+
+#account-info {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+footer form {
+    text-align: left;
+}
+
+#small-logos {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+#realtor-logo {
+    height: 3rem;
+}
+
+#equal-opp-logo {
+    height: 3rem;
+}
+
+#sereno-main-logo {
+    height: 1rem;
 }
 
 /* mobile view */
@@ -561,6 +616,7 @@ button:hover {
         display: flex;
         flex-direction: column;
         margin: 1rem;
+        padding-bottom: 2rem;
     }
     #text-container h2 {
         font-size: 1.5rem;
@@ -569,6 +625,17 @@ button:hover {
     form p {
         padding: 1rem;
     }
+
+    footer {
+        padding: 0rem 2rem 2rem 2rem;
+    }
+
+    footer, #account-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
 }
 
 @media (max-width: 426px) {
@@ -594,5 +661,17 @@ button:hover {
 
     .sub-partners-photo img {
         height: 2rem;
+    }
+
+    #realtor-logo {
+        height: 2rem;
+    }
+    
+    #equal-opp-logo {
+        height: 2rem;
+    }
+    
+    #sereno-main-logo {
+        height: 1rem;
     }
 }
