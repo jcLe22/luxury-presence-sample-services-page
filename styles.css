@@ -49,6 +49,10 @@ body {
     background-color: var(--navy-color);
 }
 
+p {
+    font-size: 1.2rem;
+}
+
 /* ----- */
 /* HEADER SECTION */
 /* ----- */
@@ -128,7 +132,7 @@ h1 {
 /* MARKETING PLAN INTRO */
 /* ----- */
 
-#marketing-strat, #comapp-section {
+#marketing-strat, #comapp-section, #intl-section {
     background-color: var(--blk-color);
     color: var(--lt-grey-color);
     padding: 5rem;
@@ -139,11 +143,11 @@ h1 {
     align-items: center;
 }
 
-#marketing-strat img, #comapp-section img {
+#marketing-strat img, #comapp-section img, .mainft-photo img {
     width: 100%;
 }
 
-#marketing-strat h3, #comapp-section h3 {
+#marketing-strat h3, #comapp-section h3, #intl-section h3 {
     font-family: 'Old Standard TT', serif;
     font-size: 2rem;
 
@@ -274,9 +278,63 @@ h1 {
 .strat-caption h3 {
     font-family: 'Old Standard TT', serif;
     font-size: 3rem;
+
+    text-transform: uppercase;
+    text-align: center;
 }
 .strat-caption p {
     font-size: 1.2rem;
+}
+
+/* ----- */
+/* MARKET TO THE WORLD */
+/* ----- */
+
+#world-market {
+    padding: 0rem 5rem 5rem 5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#world-market h2 {
+    font-size: 2rem;
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#wm-intro {
+    padding-bottom: 2rem;
+}
+
+#wm-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+/* ----- */
+/* INTL SECTION */
+/* ----- */
+
+#intl-section p {
+    padding-bottom: 2rem;
+}
+
+.sub-partners-photo {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+}
+
+.sub-partners-photo img {
+    height: 5rem;
 }
 
 /* mobile view */
@@ -322,7 +380,7 @@ h1 {
         background-size: 2rem;
     }
 
-    #marketing-strat h3, #comapp-section h3 {
+    #marketing-strat h3, #comapp-section h3, #intl-section h3 {
         font-size: 1.5rem;
     }
 
@@ -343,11 +401,18 @@ h1 {
         padding: 5rem 2rem 5rem 2rem;
     }
 
+    #intl-section {
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 2rem 5rem 2rem;
+    }
+
+    #world-market {
+        padding: 0 2rem 5rem 2rem;
+    }
+
     .strat-caption h3 {
         font-size: 2rem;
-    }
-    .strat-caption p {
-        font-size: 1rem;
     }
 }
 
@@ -372,8 +437,17 @@ h1 {
     }
 
     #success-photo img {
-        width: 30rem;
+        width: 25rem;
         height: auto;
+    }
+
+    #wm-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-partners-photo img {
+        height: 3rem;
     }
 }
 
@@ -396,5 +470,9 @@ h1 {
 
     #success-photo img {
         width: 18rem;
+    }
+
+    .sub-partners-photo img {
+        height: 2rem;
     }
 }
