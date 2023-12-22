@@ -337,6 +337,113 @@ h1 {
     height: 5rem;
 }
 
+/* ----- */
+/* WORK WITH US */
+/* ----- */
+
+#work-with-us {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#invite-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/interior.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#text-container {
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+
+    background: hsla(214, 29%, 41%, 0.785);
+    backdrop-filter: blur(0.1rem);
+    color: var(--lt-grey-color);
+}
+#text-container h2 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    position: relative;
+}
+#text-container h2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--lt-grey-color);
+    bottom: -1rem;
+    left: 40%;
+    width: 20%;
+}
+#text-container p {
+    margin-top: 2rem;
+}
+
+form {
+    text-align: center;
+}
+#form-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#form-section h3 {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: left;
+}
+label input {
+    border: none;
+    border-bottom: 1px solid var(--blk-color);
+    margin-top: 10px;
+    transition: border-bottom 0.3s;
+    height: 2rem;
+    padding: 1rem;
+}
+
+form p {
+    font-size: 1rem;
+    padding: 2rem;
+}
+
+button {
+    background-color: var(--blk-color);
+    color: var(--lt-grey-color);
+    margin: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--navy-color);
+}
+
 /* mobile view */
 @media (max-width: 1024px) {
     .page-title {
@@ -449,11 +556,24 @@ h1 {
     .sub-partners-photo img {
         height: 3rem;
     }
+
+    #work-with-us {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+    }
+    #text-container h2 {
+        font-size: 1.5rem;
+    }
+
+    form p {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 426px) {
     h1 {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .plan-icon {
