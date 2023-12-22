@@ -17,6 +17,7 @@
    --beige-color: #F0E5CF;
    --lt-grey-color: #F7F6F2;
    --dk-grey-color: #999999;
+   --blk-color: #1a1a1a;
    --navy-color: #4B6587;
 }
 
@@ -41,13 +42,20 @@ body {
     overflow: hidden;
 }
 
+.photo-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--navy-color);
+}
+
+/* ----- */
+/* HEADER SECTION */
+/* ----- */
+
 header {
     height: 100vh;
-    background-color: var(--beige-color);
     background: url('https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjQxNDUyfQ&w=1920');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
 }
 
 .page-title {
@@ -79,7 +87,7 @@ h1 {
     font-weight: 700;
     padding: 1.5rem;
 
-    background-color: var(--dk-grey-color);
+    background-color: var(--blk-color);
 }
 
 .company-logo {
@@ -116,7 +124,160 @@ h1 {
     width: 100%;
 }
 
+/* ----- */
+/* MARKETING PLAN INTRO */
+/* ----- */
 
+#marketing-strat, #comapp-section {
+    background-color: var(--blk-color);
+    color: var(--lt-grey-color);
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    
+    align-items: center;
+}
+
+#marketing-strat img, #comapp-section img {
+    width: 100%;
+}
+
+#marketing-strat h3, #comapp-section h3 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+}
+
+/* ----- */
+/* COMPRE PLAN */
+/* ----- */
+
+#plan-section {
+    padding: 3rem;
+    flex-direction: column;
+    align-items: center;
+}
+#plan-section h2 {
+    font-size: 2em;
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#marketing-plan {
+    padding: 3rem;
+    gap: 1.5rem;
+}
+
+.plan-container {
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.plan-icon {
+    width: 5rem;
+}
+
+/* ----- */
+/* BUY-SELL SECTION */
+/* ----- */
+
+#buy-sell-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 5rem;
+}
+
+#buy-photo {
+    background: url('./images/buy-photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#sell-photo {
+    background: url('./images/sell-photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.process-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--blk-color);
+    color: var(--lt-grey-color);
+    padding: 1rem;
+}
+
+.process-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-container li {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.process-title {
+    text-transform: uppercase;
+
+    font-family: 'Old Standard TT', serif;
+    font-size: 3rem;
+}
+.process-title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color: var(--lt-grey-color);
+    bottom: -5px;
+    width: 15%;
+}
+  
+.process-container .number {
+    font-weight: 700;
+}
+
+/* ----- */
+/* COMMUNICATION APPLICATION */
+/* ----- */
+
+/* ----- */
+/* STRATEGIES SECTION */
+/* ----- */
+
+#strategies-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 5rem;
+}
+
+.strat-caption {
+    text-align: center;
+}
+.strat-caption h3 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 3rem;
+}
+.strat-caption p {
+    font-size: 1.2rem;
+}
 
 /* mobile view */
 @media (max-width: 1024px) {
@@ -160,16 +321,80 @@ h1 {
         background-image: url('./assets/close-svgrepo-com.svg');
         background-size: 2rem;
     }
+
+    #marketing-strat h3, #comapp-section h3 {
+        font-size: 1.5rem;
+    }
+
+    #buy-sell-section {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+        padding: 0 2rem 5rem 2rem;
+    }
+
+    .process-title {
+        font-size: 2rem;
+    }
+
+    #strategies-section, #marketing-strat, #comapp-section, #plan-section {
+        padding: 5rem 2rem 5rem 2rem;
+    }
+
+    .strat-caption h3 {
+        font-size: 2rem;
+    }
+    .strat-caption p {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 426px) and (max-width: 1024px) {
     #nav-list {
         inset: 0 0 0 70%;
     }
+
+    .plan-icon {
+        width: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #marketing-strat, #comapp-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #marketing-plan {
+        flex-direction: column;
+    }
+
+    #success-photo img {
+        width: 30rem;
+        height: auto;
+    }
 }
 
 @media (max-width: 426px) {
     h1 {
         padding: 1rem;
+    }
+
+    .plan-icon {
+        width: 3rem;
+    }
+
+    .process-title {
+        font-size: 1.5rem;
+    }
+
+    .strat-caption h3 {
+        font-size: 1.5rem;
+    }
+
+    #success-photo img {
+        width: 18rem;
     }
 }
